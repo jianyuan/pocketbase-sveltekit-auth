@@ -1,20 +1,18 @@
-# create-svelte
+# pocketbase-sveltekit-auth
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is a project that demonstrates how to integrate PocketBase with SvelteKit 1.0. The project includes login and registration pages, as well as examples of how to retrieve the current user. You can watch a video of the creation of this project on YouTube at [this link](https://youtu.be/AxPB3e-3yEM).
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+[![Watch the video](https://img.youtube.com/vi/AxPB3e-3yEM/0.jpg)](https://youtu.be/AxPB3e-3yEM)
 
 ## Developing
+
+To get started with this project, you will need to have PocketBase installed and running on your system. You can find more information about installing and setting up PocketBase at the [PocketBase website](https://pocketbase.io/).
+
+```
+./pocketbase serve
+```
+
+Copy `.env.example` to `.env` and make changes as necessary.
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
