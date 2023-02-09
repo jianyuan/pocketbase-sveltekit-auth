@@ -1,7 +1,10 @@
 <script lang="ts">
   import { applyAction, enhance } from '$app/forms'
-  import { currentUser, pb } from '$lib/pocketbase'
+  import { pb } from '$lib/pocketbase'
+  import type { PageData } from './$types'
   import '../app.postcss'
+
+  export let data: PageData
 </script>
 
 <div class="bg-neutral text-neutral-content">
@@ -11,8 +14,8 @@
     </div>
     <div class="navbar-end">
       <ul class="menu menu-horizontal">
-        {#if $currentUser}
-          <li><a href="/">{$currentUser.email}</a></li>
+        {#if data.user}
+          <li><a href="/">{data.user.email}</a></li>
           <li>
             <form
               method="POST"
