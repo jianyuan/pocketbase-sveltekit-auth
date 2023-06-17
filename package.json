@@ -37,6 +37,6 @@
   },
   "type": "module",
   "dependencies": {
-    "pocketbase": "^0.9.1"
+    "pocketbase": "^0.15.0"
   }
 }
