@@ -1,23 +1,27 @@
-import { pb } from '$lib/pocketbase'
+import { createInstance } from '$lib/pocketbase'
 import type { Handle } from '@sveltejs/kit'
 
 export const handle: Handle = async ({ event, resolve }) => {
-  // before
+  const pb = createInstance()
+
+  // load the store data from the request cookie string
   pb.authStore.loadFromCookie(event.request.headers.get('cookie') || '')
-  if (pb.authStore.isValid) {
-    try {
+  try {
+    // get an up-to-date auth store state by verifying and refreshing the loaded auth model (if any)
+    if (pb.authStore.isValid) {
       await pb.collection('users').authRefresh()
-    } catch (_) {
-      pb.authStore.clear()
     }
+  } catch (_) {
+    // clear the auth store on failed refresh
+    pb.authStore.clear()
   }
 
   event.locals.pb = pb
-  event.locals.user = structuredClone(pb.authStore.model)
+  event.locals.user = pb.authStore.model
 
   const response = await resolve(event)
 
-  // after
+  // send back the default 'pb_auth' cookie to the client with the latest store state
   response.headers.set(
     'set-cookie',
     pb.authStore.exportToCookie({ httpOnly: false })

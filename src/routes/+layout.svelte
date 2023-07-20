@@ -1,6 +1,7 @@
 <script lang="ts">
   import { applyAction, enhance } from '$app/forms'
-  import { currentUser, pb } from '$lib/pocketbase'
+  import { pb } from '$lib/pocketbase'
+  import { currentUser } from '$lib/stores/user'
   import '../app.postcss'
 </script>
 
