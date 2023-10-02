@@ -1,8 +1,15 @@
 <script lang="ts">
+  import '../app.postcss'
+
   import { applyAction, enhance } from '$app/forms'
   import { pb } from '$lib/pocketbase'
   import { currentUser } from '$lib/stores/user'
-  import '../app.postcss'
+  import type { PageData } from './$types'
+
+  export let data: PageData
+
+  // Set the current user from the data passed in from the server
+  $: currentUser.set(data.user)
 </script>
 
 <div class="bg-neutral text-neutral-content">
