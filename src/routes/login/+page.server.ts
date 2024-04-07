@@ -17,6 +17,6 @@ export const actions: Actions = {
       throw e
     }
 
-    throw redirect(303, '/')
+    redirect(303, '/');
   },
 }
