@@ -1,10 +1,9 @@
 <script lang="ts">
   import '../app.postcss'
 
-  import type { Snippet } from 'svelte'
+  import { setContext, type Snippet } from 'svelte'
   import { applyAction, enhance } from '$app/forms'
   import { pb } from '$lib/pocketbase'
-  import { currentUser } from '$lib/stores/user'
   import type { PageData } from './$types'
 
   interface Props {
@@ -14,10 +13,8 @@
 
   let { data, children }: Props = $props()
 
-  // Set the current user from the data passed in from the server
-  $effect(() => {
-    currentUser.set(data.user)
-  })
+  // Add the user to the context so we can access it in other components
+  setContext('user', data.user)
 </script>
 
 <div class="bg-neutral text-neutral-content">
@@ -27,8 +24,8 @@
     </div>
     <div class="navbar-end">
       <ul class="menu menu-horizontal">
-        {#if $currentUser}
-          <li><a href="/">{$currentUser.email}</a></li>
+        {#if data.user}
+          <li><a href="/">{data.user.email}</a></li>
           <li>
             <form
               method="POST"
