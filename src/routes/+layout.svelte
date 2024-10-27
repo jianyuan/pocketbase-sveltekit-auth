@@ -1,15 +1,23 @@
 <script lang="ts">
   import '../app.postcss'
 
+  import type { Snippet } from 'svelte'
   import { applyAction, enhance } from '$app/forms'
   import { pb } from '$lib/pocketbase'
   import { currentUser } from '$lib/stores/user'
   import type { PageData } from './$types'
 
-  export let data: PageData
+  interface Props {
+    data: PageData
+    children?: Snippet
+  }
+
+  let { data, children }: Props = $props()
 
   // Set the current user from the data passed in from the server
-  $: currentUser.set(data.user)
+  $effect(() => {
+    currentUser.set(data.user)
+  })
 </script>
 
 <div class="bg-neutral text-neutral-content">
@@ -45,5 +53,5 @@
 </div>
 
 <div class="max-w-xl mx-auto py-8 px-4">
-  <slot />
+  {@render children?.()}
 </div>
