@@ -1,8 +1,8 @@
+import { getUserContext } from '$lib/contexts/user'
 import { pb } from '$lib/pocketbase'
-import { setContext } from 'svelte'
 
 pb.authStore.loadFromCookie(document.cookie)
 pb.authStore.onChange(() => {
-  setContext('user', pb.authStore.model)
+  getUserContext().set(pb.authStore.model)
   document.cookie = pb.authStore.exportToCookie({ httpOnly: false })
 }, true)

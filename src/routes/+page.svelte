@@ -1,12 +1,11 @@
 <script lang="ts">
-  import type { AuthModel } from 'pocketbase'
-  import { getContext } from 'svelte'
+  import { getUserContext } from '$lib/contexts/user'
 
-  const user = getContext<AuthModel | undefined>('user')
+  const user = getUserContext()
 </script>
 
-{#if user}
-  <p>Logged in as {user.email}</p>
+{#if $user}
+  <p>Logged in as {$user.email}</p>
 {:else}
   <p>Not logged in</p>
 {/if}
