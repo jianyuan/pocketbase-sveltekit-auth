@@ -5,7 +5,7 @@ declare namespace App {
   // interface Error {}
   interface Locals {
     pb: import('pocketbase').default
-    user: import('pocketbase').default['authStore']['model']
+    user: import('pocketbase').default['authStore']['record']
   }
   // interface PageData {}
   // interface Platform {}
