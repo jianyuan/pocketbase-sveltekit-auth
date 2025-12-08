@@ -12,7 +12,10 @@
 
 <p>
   Visit
-  <a href="https://github.com/jianyuan/pocketbase-sveltekit-auth">
+  <a
+    href="https://github.com/jianyuan/pocketbase-sveltekit-auth"
+    class="link link-primary"
+  >
     our GitHub repository
   </a>
   to read the documentation.

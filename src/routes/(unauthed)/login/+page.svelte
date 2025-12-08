@@ -14,7 +14,7 @@
   }}
 >
   <h1 class="text-2xl mb-8">Log in</h1>
-  <div class="form-control gap-2 mb-4">
+  <div class="flex flex-col gap-2 [&_input]:w-full">
     <input
       type="email"
       name="email"
