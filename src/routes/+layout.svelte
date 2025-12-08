@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '../app.postcss'
+  import '../app.css'
 
   import { browser } from '$app/environment'
   import { applyAction, enhance } from '$app/forms'
