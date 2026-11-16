@@ -17,7 +17,7 @@ importers:
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^7.0.0
-        version: 7.0.0(@sveltejs/kit@2.49.1(@sveltejs/vite-plugin-svelte@6.2.1(supports-color@7.2.0)(svelte@5.45.6)(vite@7.3.5(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.45.6)(vite@7.3.5(jiti@2.6.1)(lightningcss@1.30.2)))
+        version: 7.0.1(@sveltejs/kit@2.49.1(@sveltejs/vite-plugin-svelte@6.2.1(supports-color@7.2.0)(svelte@5.45.6)(vite@7.3.5(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.45.6)(vite@7.3.5(jiti@2.6.1)(lightningcss@1.30.2)))
       '@sveltejs/kit':
         specifier: ^2.49.1
         version: 2.49.1(@sveltejs/vite-plugin-svelte@6.2.1(supports-color@7.2.0)(svelte@5.45.6)(vite@7.3.5(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.45.6)(vite@7.3.5(jiti@2.6.1)(lightningcss@1.30.2))
@@ -450,8 +450,8 @@ packages:
     peerDependencies:
       acorn: ^8.9.0
 
-  '@sveltejs/adapter-auto@7.0.0':
-    resolution: {integrity: sha512-ImDWaErTOCkRS4Gt+5gZuymKFBobnhChXUZ9lhUZLahUgvA4OOvRzi3sahzYgbxGj5nkA6OV0GAW378+dl/gyw==}
+  '@sveltejs/adapter-auto@7.0.1':
+    resolution: {integrity: sha512-dvuPm1E7M9NI/+canIQ6KKQDU2AkEefEZ2Dp7cY6uKoPq9Z/PhOXABe526UdW2mN986gjVkuSLkOYIBnS/M2LQ==}
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
@@ -804,6 +804,7 @@ packages:
   eslint@9.39.1:
     resolution: {integrity: sha512-BhHmn2yNOFA9H9JmmIVKJmd288g9hrVRDkdoIgRCRuSySRUHH7r/DI6aAXW9T1WwUuY3DFgrcaqB+deURBLR5g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -1598,7 +1599,7 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  '@sveltejs/adapter-auto@7.0.0(@sveltejs/kit@2.49.1(@sveltejs/vite-plugin-svelte@6.2.1(supports-color@7.2.0)(svelte@5.45.6)(vite@7.3.5(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.45.6)(vite@7.3.5(jiti@2.6.1)(lightningcss@1.30.2)))':
+  '@sveltejs/adapter-auto@7.0.1(@sveltejs/kit@2.49.1(@sveltejs/vite-plugin-svelte@6.2.1(supports-color@7.2.0)(svelte@5.45.6)(vite@7.3.5(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.45.6)(vite@7.3.5(jiti@2.6.1)(lightningcss@1.30.2)))':
     dependencies:
       '@sveltejs/kit': 2.49.1(@sveltejs/vite-plugin-svelte@6.2.1(supports-color@7.2.0)(svelte@5.45.6)(vite@7.3.5(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.45.6)(vite@7.3.5(jiti@2.6.1)(lightningcss@1.30.2))
 
